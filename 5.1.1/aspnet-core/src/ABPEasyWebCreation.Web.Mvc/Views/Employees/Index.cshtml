@@ -1,0 +1,33 @@
+﻿@using Abp.Authorization.Users
+@using ABPEasyWebCreation.Web.Startup
+@*@model ABPEasyWebCreation.Web.Models.Employees.EmployeeListViewModel*@
+@{
+    ViewBag.CurrentPageName = PageNames.Employees; // The menu item will be active for this page.
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Employees/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Employees/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<h2>@L("EmployeeList")</h2>
+<div id="gridContainer"></div>
+@*<div class="row">
+    <div>
+        <ul class="list-group" id="TaskList">
+            @foreach (var emp in Model.Employees)
+            {
+                <li class="list-group-item">
+                    <h4 class="list-group-item-heading">@emp.FullName</h4>
+                    <div class="list-group-item-text">
+                        @emp.StartingDate.Value.ToString("yyyy-MM-dd HH:mm:ss")
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>*@
